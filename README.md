@@ -1,0 +1,1 @@
+This is my mental health blog i created. I feel mental health is a vital area in my life i have struggled with. so i decided to take my struggles to creativity and hopefully reach others with mental health problems.
