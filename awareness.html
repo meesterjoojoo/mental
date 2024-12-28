@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="./blogg.webp" style="max-height: 75px">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Home</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+                <a class="navbar-item" href="quotes.html">Quotes</a>
+            </div>
+        </div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <div class="box">
+                    <h1 class="title has-text-black has-text-centered">Wellness Wanderer</h1>
+                    <h2 class="subtitle has-text-black has-text-centered">Empowering you with insights and tips for a healthy mind.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Section -->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <!-- Left Column: Image and Newsletter -->
+                <div class="column is-4">
+                    <img src="./stockvault-woman-practicing-yoga-at-sunrise-over-rainforest-dawn262762.jpg" class="pl-2 pt-2">
+                    <div class="box pt-6 pr-3">
+                        <h1 class="title has-text-centered">Subscribe to Our Newsletter</h1>
+                        <p class="subtitle has-text-centered">Stay updated with our latest news and offers.</p>
+                        <form id="newsletter-form">
+                            <div class="field has-addons has-addons-centered">
+                                <div class="control is-expanded">
+                                    <input 
+                                        class="input" 
+                                        type="email" 
+                                        id="email" 
+                                        placeholder="Enter your email address" 
+                                        required>
+                                </div>
+                                <div class="control">
+                                    <button type="submit" class="button is-primary">Subscribe</button>
+                                </div>
+                            </div>
+                            <p class="help has-text-centered">We respect your privacy. Unsubscribe anytime.</p>
+                        </form>
+                        <div id="success-message" class="notification is-success is-hidden has-text-centered">
+                            Thank you for subscribing! Check your inbox for confirmation.
+                        </div>
+                        <div id="error-message" class="notification is-danger is-hidden has-text-centered">
+                            Oops! Something went wrong. Please try again.
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Article -->
+                <div class="column is-8">
+                    <div class="content">
+                        <h1 class="title is-1">Mental Health Awareness</h1>
+                        <p><strong>Understanding and Promoting Mental Awareness</strong></p>
+                        <p>Mental awareness is an essential component of overall well-being. It involves recognizing, understanding, and addressing mental health issues in ourselves and others. In an increasingly fast-paced and demanding world, fostering mental awareness has become more critical than ever.</p>
+                        <p><strong>The Importance of Mental Awareness</strong></p>
+                        <p>Mental health is as important as physical health, yet it often does not receive the same attention. Mental awareness helps in identifying signs of stress, anxiety, depression, and other psychological conditions early. Early recognition can lead to timely interventions, improving outcomes and preventing the escalation of issues.</p>
+                        <p><strong>Breaking the Stigma</strong></p>
+                        <p>One of the significant barriers to mental awareness is the stigma surrounding mental health. Many people hesitate to discuss their struggles due to fear of judgment or misunderstanding. Promoting open conversations about mental health can normalize these discussions, encouraging individuals to seek help when needed.</p>
+                        <p><strong>Recognizing Signs of Mental Health Challenges</strong></p>
+                        <p>Being mentally aware means being attuned to the emotional and psychological well-being of oneself and others. Some common signs that someone might be struggling include:</p>
+                        <ul>
+                            <li>Persistent feelings of sadness or hopelessness</li>
+                            <li>Sudden changes in mood or behavior</li>
+                            <li>Withdrawal from social activities</li>
+                            <li>Difficulty concentrating</li>
+                            <li>Changes in sleep or appetite</li>
+                        </ul>
+                        <p>Recognizing these signs is the first step in offering support or seeking help.</p>
+                        <h2>Strategies to Promote Mental Awareness</h2>
+                        <ol>
+                            <li><strong>Educate Yourself and Others:</strong> Understanding mental health conditions and their effects can dispel myths and misinformation. Knowledge fosters empathy and reduces stigma.</li>
+                            <li><strong>Encourage Open Communication:</strong> Create safe spaces where individuals feel comfortable sharing their feelings without fear of judgment. Active listening can make a significant difference.</li>
+                            <li><strong>Practice Self-Care:</strong> Taking care of your own mental health is vital. Activities like exercise, meditation, maintaining a balanced diet, and setting boundaries can improve emotional resilience.</li>
+                            <li><strong>Seek Professional Help:</strong> Encourage seeking professional support when needed. Therapists, counselors, and support groups provide valuable resources for managing mental health challenges.</li>
+                            <li><strong>Advocate for Mental Health:</strong> Support initiatives that promote mental health awareness, such as community programs, workplace policies, and mental health education in schools.</li>
+                        </ol>
+                        <p><strong>The Role of Society</strong></p>
+                        <p>Communities play a pivotal role in shaping attitudes toward mental health. Schools, workplaces, and social institutions should prioritize mental awareness through policies and programs that support mental well-being. This collective effort can create a more compassionate and understanding society.</p>
+                        <p><strong>Conclusion</strong></p>
+                        <p>Mental awareness is a journey of understanding, empathy, and action. By prioritizing mental health, breaking down stigmas, and fostering open conversations, we can create an environment where everyone feels supported and valued. Remember, mental health is not a destination but a continuous process of care and attention—one that benefits individuals and society as a whole.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer has-background-primary">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Mental Wellness Blog</strong> by <a href="#">Travis H</a>. Sharing knowledge for a healthier mind.
+            </p>
+        </div>
+    </footer>
+    <script>
+        class CommentManager {
+            constructor(formId, listId, errorId) {
+                this.form = document.getElementById(formId);
+                this.commentsList = document.getElementById(listId);
+                this.errorMessage = document.getElementById(errorId);
+                this.comments = JSON.parse(localStorage.getItem('blogComments') || '[]');
+                
+                this.form.addEventListener('submit', this.handleSubmit.bind(this));
+                this.renderComments();
+            }
+
+            handleSubmit(event) {
+                event.preventDefault();
+                this.errorMessage.textContent = '';
+
+                const nameInput = document.getElementById('nameInput');
+                const commentInput = document.getElementById('commentInput');
+
+                if (!this.validateInputs(nameInput.value, commentInput.value)) {
+                    return;
+                }
+
+                const newComment = {
+                    name: nameInput.value.trim(),
+                    text: commentInput.value.trim(),
+                    timestamp: new Date().toLocaleString()
+                };
+
+                this.comments.unshift(newComment);
+                this.saveComments();
+                this.renderComments();
+
+                // Reset form
+                nameInput.value = '';
+                commentInput.value = '';
+            }
+
+            validateInputs(name, comment) {
+                if (name.length < 2) {
+                    this.errorMessage.textContent = 'Name must be at least 2 characters long.';
+                    return false;
+                }
+                if (comment.length < 5) {
+                    this.errorMessage.textContent = 'Comment must be at least 5 characters long.';
+                    return false;
+                }
+                return true;
+            }
+
+            saveComments() {
+                // Limit to last 50 comments
+                this.comments = this.comments.slice(0, 50);
+                localStorage.setItem('blogComments', JSON.stringify(this.comments));
+            }
+
+            renderComments() {
+                this.commentsList.innerHTML = this.comments.map(comment => `
+                    <div class="comment">
+                        <div class="comment-header">
+                            <strong>${this.escapeHTML(comment.name)}</strong>
+                            <small>${comment.timestamp}</small>
+                        </div>
+                        <p>${this.escapeHTML(comment.text)}</p>
+                    </div>
+                `).join('');
+            }
+
+            escapeHTML(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+        }
+
+        // Initialize comment manager when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new CommentManager('commentForm', 'commentsList', 'errorMessage');
+        });
+    </script>
+</body>
+</html>
+

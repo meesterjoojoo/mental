@@ -1,0 +1,90 @@
+.hero { 
+   background-image:url(blogg.webp) ;
+   background-position: center;
+   background-size: cover;
+}
+
+.welcome h1{ 
+   font-family: "Croissant One", serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-top: 4rem;
+}
+
+.navbar h1 { 
+   font-family: "Swanky and Moo Moo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comment-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .comment-form {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .comment-form input, 
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .comment-form button {
+            background-color: var(--primary-color);
+            color: rgb(4, 161, 135);
+            border: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: #34495e;
+        }
+
+        .comments-list {
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+        }
+
+        .comment {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .comment-error {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .comment-section {
+                padding: 10px;
+            }
+        }
+
+        

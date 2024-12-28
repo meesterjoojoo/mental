@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Comment Section</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #ecf0f1;
+            --text-color: #333;
+            --border-radius: 8px;
+        }
+
+        .comment-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .comment-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .comment-form input, 
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .comment-form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: #34495e;
+        }
+
+        .comments-list {
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+        }
+
+        .comment {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .comment-error {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .comment-section {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="comment-section">
+        <div class="comment-form">
+            <form id="commentForm">
+                <input type="text" id="nameInput" placeholder="Your Name" required>
+                <textarea id="commentInput" placeholder="Write your comment..." required></textarea>
+                <div id="errorMessage" class="comment-error"></div>
+                <button type="submit">Submit Comment</button>
+            </form>
+        </div>
+        <div id="commentsList" class="comments-list"></div>
+    </div>
+
+    <script>
+        class CommentManager {
+            constructor(formId, listId, errorId) {
+                this.form = document.getElementById(formId);
+                this.commentsList = document.getElementById(listId);
+                this.errorMessage = document.getElementById(errorId);
+                this.comments = JSON.parse(localStorage.getItem('blogComments') || '[]');
+                
+                this.form.addEventListener('submit', this.handleSubmit.bind(this));
+                this.renderComments();
+            }
+
+            handleSubmit(event) {
+                event.preventDefault();
+                this.errorMessage.textContent = '';
+
+                const nameInput = document.getElementById('nameInput');
+                const commentInput = document.getElementById('commentInput');
+
+                if (!this.validateInputs(nameInput.value, commentInput.value)) {
+                    return;
+                }
+
+                const newComment = {
+                    name: nameInput.value.trim(),
+                    text: commentInput.value.trim(),
+                    timestamp: new Date().toLocaleString()
+                };
+
+                this.comments.unshift(newComment);
+                this.saveComments();
+                this.renderComments();
+
+                // Reset form
+                nameInput.value = '';
+                commentInput.value = '';
+            }
+
+            validateInputs(name, comment) {
+                if (name.length < 2) {
+                    this.errorMessage.textContent = 'Name must be at least 2 characters long.';
+                    return false;
+                }
+                if (comment.length < 5) {
+                    this.errorMessage.textContent = 'Comment must be at least 5 characters long.';
+                    return false;
+                }
+                return true;
+            }
+
+            saveComments() {
+                // Limit to last 50 comments
+                this.comments = this.comments.slice(0, 50);
+                localStorage.setItem('blogComments', JSON.stringify(this.comments));
+            }
+
+            renderComments() {
+                this.commentsList.innerHTML = this.comments.map(comment => `
+                    <div class="comment">
+                        <div class="comment-header">
+                            <strong>${this.escapeHTML(comment.name)}</strong>
+                            <small>${comment.timestamp}</small>
+                        </div>
+                        <p>${this.escapeHTML(comment.text)}</p>
+                    </div>
+                `).join('');
+            }
+
+            escapeHTML(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+        }
+
+        // Initialize comment manager when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new CommentManager('commentForm', 'commentsList', 'errorMessage');
+        });
+    </script>
+</body>
+</html>

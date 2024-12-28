@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quotes = [
+                { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+                { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+                { text: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs" },
+                { text: "If life were predictable it would cease to be life, and be without flavor.", author: "Eleanor Roosevelt" },
+                { text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" }
+            ];
+
+            const quoteText = document.getElementById('quote-text');
+            const quoteAuthor = document.getElementById('quote-author');
+            const button = document.getElementById('new-quote-button');
+
+            button.addEventListener('click', () => {
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                quoteText.textContent = `"${randomQuote.text}"`;
+                quoteAuthor.textContent = `- ${randomQuote.author}`;
+            });
+        });
+    </script>
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="./blogg.webp" style="max-height: 75px">
+            </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item" href="contact.html">Contact</a>
+                    <a class="navbar-item" href="quotes.html">Quotes</a>
+
+                </div>
+             </div>       
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Quote Section -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Motivational Quote of the Day</h1>
+            <div class="box has-text-centered">
+                <blockquote>
+                    <p id="quote-text" class="is-size-4">"The greatest glory in living lies not in never falling, but in rising every time we fall."</p>
+                    <footer id="quote-author">- Nelson Mandela</footer>
+                </blockquote>
+            </div>
+
+            <div class="has-text-centered mt-5">
+                <button id="new-quote-button" class="button is-link">Get a New Quote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Mental Wellness Blog</strong> by <a href="#">Travis H</a>. Inspiring you one day at a time.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+

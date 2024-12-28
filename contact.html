@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('eQ8ncENVlA2C0EOjo')
+</script>
+        
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="./blogg.webp" style="max-height: 75px">
+            </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item" href="contact.html">Contact</a>
+                    <a class="navbar-item" href="quotes.html">Quotes</a>
+
+                </div>
+             </div>       
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    </nav>
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Contact Us</h1>
+            <p class="subtitle has-text-centered">We'd love to hear from you! Feel free to reach out using the form below.</p>
+
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <form>
+                        <div class="field">
+                            <label class="label">Your Name</label>
+                            <div class="control">
+                                <input class="input" name="name" type="text" placeholder="Enter your name" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Email Address</label>
+                            <div class="control">
+                                <input class="input" name="email" type="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Subject</label>
+                            <div class="control">
+                                <input class="input" name="subject" type="text" placeholder="Enter the subject" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Message</label>
+                            <div class="control">
+                                <textarea class="textarea" name="message" placeholder="Write your message here" rows="6" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link" type="submit">Submit</button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-light" type="reset">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Mental Wellness Blog</strong> by <a href="#">Travis H</a>. Sharing knowledge for a healthier mind.
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
